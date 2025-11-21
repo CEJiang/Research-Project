@@ -1,0 +1,44 @@
+# ===============================================
+# Unity 專案行結尾標準化配置 (LF)
+# 確保所有文本檔案在 Git 倉庫中儲存為 LF
+# -----------------------------------------------
+# 1. 核心腳本和程式碼檔案
+# C# 腳本 (確保所有腳本使用 LF)
+*.cs text eol=lf
+# JavaScript 腳本
+*.js text eol=lf
+# Shader 腳本 (處理您這次遇到的警告)
+*.shader text eol=lf
+# 2. Unity YAML 文本資源檔案
+# 場景、預製體、設定檔、中繼資料、材質球、地形層
+*.unity text eol=lf
+*.asset text eol=lf
+*.prefab text eol=lf
+*.meta text eol=lf
+*.mat text eol=lf
+*.terrainlayer text eol=lf
+# 3. 其他文本設定檔
+# Unity Package / VSCode / 通用文本檔案
+*.json text eol=lf
+*.asmdef text eol=lf
+*.txt text eol=lf
+.gitignore text eol=lf
+# 4. 二進制/特殊檔案 (完全不處理行結尾，避免破壞結構)
+# -----------------------------------------------
+# Windows 執行檔
+*.exe binary
+# 3D 模型檔案 (obj, fbx, ma, blend 等應視為二進制)
+*.obj binary
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.blend binary
+# 處理您遇到的 Maya 檔案警告
+*.ma binary
+# 常見的壓縮檔/套件/字體
+*.zip binary
+*.unitypackage binary
+*.otf binary
+*.ttf binary
+*.png binary
+*.jpg binary
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
