@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Zone_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: a83fde67b0cc37347b14caee8488f9c5, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 676821196800
+    m_Localized: Dining Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2308573224960
+    m_Localized: Guest Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2740175495168
+    m_Localized: Study Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3084926312448
+    m_Localized: Stairwell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3284893949952
+    m_Localized: Storage Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3624905203712
+    m_Localized: Child Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3792601866240
+    m_Localized: Master Room
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

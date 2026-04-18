@@ -1,0 +1,39 @@
+using System.Collections.Generic;
+
+public class EvidenceMetadata
+{
+    public EvidenceModel evidence;
+    public Dictionary<string, float> previousHypothesisState;
+    public Dictionary<string, float> updatedHypothesisState;
+    public List<ClaimSelectionResult> claimResults;
+        
+    public override string ToString()
+    {
+        string result = $"Evidence: {evidence.displayName}\nZone: {evidence.zoneAt}\nFacts:\n";
+        foreach (var fact in evidence.factBullets)
+        {
+            result += $"- {fact}\n";
+        }
+
+        result += "Previous Hypothesis State:\n";
+        foreach (var kvp in previousHypothesisState)
+        {
+            result += $"- {kvp.Key}: {kvp.Value}\n";
+        }
+
+        result += "Updated Hypothesis State:\n";
+        foreach (var kvp in updatedHypothesisState)
+        {
+            result += $"- {kvp.Key}: {kvp.Value}\n";
+        }
+
+        result += "Claim Results:\n";
+        foreach (var claimResult in claimResults)
+        {
+            result += $"- Claim ID: {claimResult.claimId}, Polarity: {claimResult.polarity}, Strength: {claimResult.strength}, Reason: {claimResult.reason}\n";
+        }
+
+        return result;
+    }
+}
+

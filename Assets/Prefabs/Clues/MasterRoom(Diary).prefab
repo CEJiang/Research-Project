@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4879728502181706264
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 901453818961476535, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 24758373502976
+      objectReference: {fileID: 0}
+    - target: {fileID: 901453818961476535, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:b7baef54e2600a5439d6c667a4dd784b
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292748094596551097, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292748094596551097, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292748094596551097, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292748094596551097, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292748094596551097, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292748094596551097, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292748094596551097, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292748094596551097, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292748094596551097, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292748094596551097, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834773926793661857, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_Name
+      value: MasterRoom(Diary)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001207236097238742, guid: 6067253ee42b3804485503092ce0eaa6,
+        type: 3}
+      propertyPath: m_Text
+      value: 'That night, as I read the war novel, the image of a chessboard came
+        to mind.
+
+        I thought maybe I could use this sequence as my own code.
+
+        If
+        someone could place the white pieces back in the right order, perhaps only
+        those who truly understand the battle could crack the code.'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6067253ee42b3804485503092ce0eaa6, type: 3}

@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4895405805123708172
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4852185419621650672, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 3590772663177216
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852185419621650672, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:b7baef54e2600a5439d6c667a4dd784b
+      objectReference: {fileID: 0}
+    - target: {fileID: 5809635649531073021, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_Name
+      value: Notepad (Chess)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292452802560127274, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292452802560127274, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292452802560127274, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292452802560127274, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292452802560127274, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292452802560127274, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292452802560127274, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292452802560127274, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292452802560127274, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292452802560127274, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7011272628108379819, guid: 017273891303ef04f8cbc1bc1a8a064a,
+        type: 3}
+      propertyPath: m_Text
+      value: "August 17\nPlayed chess with her today. At first, she was focused,
+        but sometimes she suddenly looked up, as if listening to something, her attention
+        drifting away from the board. When I asked what she was thinking, she only
+        looked at that teddy bear and said, \u201CHe\u2019s reminding me.\u201D"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 017273891303ef04f8cbc1bc1a8a064a, type: 3}
