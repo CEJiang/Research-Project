@@ -43,7 +43,7 @@ public class HumanVisionSemanticDetector : MonoBehaviour
         foreach (var col in hits)
         {
             SemanticActionObject obj = col.GetComponent<SemanticActionObject>();
-            if (obj == null || obj.isChecked) continue;
+            if (obj == null || obj.IsChecked) continue;
 
             Vector3 closestPoint = col.ClosestPoint(playerCamera.transform.position);
             Vector3 dir = (closestPoint - playerCamera.transform.position).normalized;
@@ -172,7 +172,7 @@ public class HumanVisionSemanticDetector : MonoBehaviour
 
             _ => ""
         };
-        message += $" {significanceDescriptions[obj.significance]} {GetMemoryTag(obj.memoryStrength)}";
+        message += $" {significanceDescriptions[obj.Significance]} {GetMemoryTag(obj.memoryStrength)}";
 
         _ = SemanticActionManager.Instance.LogSemanticAction(
             new SemanticAction(Time.time, ActionType.PlayerObject, message)

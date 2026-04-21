@@ -137,7 +137,7 @@ public class FirstPersonController : MonoBehaviour
                     SemanticActionObject semanticActionObject = target.GetComponent<SemanticActionObject>();
                     if (semanticActionObject != null)
                     {
-                        UIManager.Instance.SetCameraDisplayName(semanticActionObject.displayName);
+                        UIManager.Instance.SetCameraDisplayName(semanticActionObject.DisplayName);
                     }
                 }
                 else

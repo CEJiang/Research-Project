@@ -51,6 +51,26 @@ MonoBehaviour:
     m_Key: Newspaper_text5
     m_Metadata:
       m_Items: []
+  - m_Id: 2353164421423104
+    m_Key: Unfinished_Letter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2378827706654720
+    m_Key: Lobby_Stick_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2516917649661952
+    m_Key: Medical_Examination_Record
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2527516282576896
+    m_Key: Calendar_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2527634419343360
+    m_Key: Calendar_Body
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
