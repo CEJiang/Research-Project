@@ -1,0 +1,225 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7605723072847916116
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2223821699887363382, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_Name
+      value: Medical Examination Record Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584794042458671455, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 2516917649661952
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584794042458671455, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:098b675cfe35a0c4c92e4e4535732b82
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584794042458671455, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3521834366064559137}
+    - target: {fileID: 2584794042458671455, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178644393545279412, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.665
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7103729
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 48.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.3580037
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3580037
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.60978144
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.60978144
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395138254736901189, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 60.835
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443777387910735989, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      propertyPath: m_Text
+      value: "Medical Examination Record:\r\n\r\nAssessment Time: 08:40\r\n\r\n1.
+        Vital Signs:\r\n- Heart rate: approximately 72 bpm, regular rhythm\r\n- Respiratory
+        rate: approximately 14 breaths per minute, stable\r\n- Body temperature:
+        36.7\xB0C\r\n- Blood pressure: 118/76 mmHg\r\n\r\n2. External Examination:\r\n-
+        No visible signs of external injury, bruising, or laceration\r\n- Normal
+        range of motion in all joints\r\n- No defensive wounds observed on hands
+        or forearms\r\n\r\n3. Neurological and Cognitive Response:\r\n- Pupils respond
+        normally to light\r\n- No apparent disorientation or delayed response\r\n-
+        Coordination appears normal\r\n\r\n4. Chemical and Toxicology Screening:\r\n-
+        No detectable presence of common sedatives or anesthetics\r\n- No abnormal
+        chemical substances found in blood samples\r\n\r\n5. Additional Observations:\r\n-
+        Clothing appears intact and undamaged\r\n- No foreign residues observed on
+        the body\r\n- Minor fluctuations in certain physiological indicators are
+        noted but remain within normal range\r\n\r\nOverall Observation:\r\n- No
+        significant abnormalities detected across all examinations\r\n- Current condition
+        is consistent with normal daily activity"
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 547895986362816154, guid: 10648b19612872c4f85593b236504a00, type: 3}
+    - {fileID: 5666420119134638334, guid: 10648b19612872c4f85593b236504a00, type: 3}
+    - {fileID: 1385473030286039878, guid: 10648b19612872c4f85593b236504a00, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2223821699887363382, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4472258405918350241}
+    - targetCorrespondingSourceObject: {fileID: 2223821699887363382, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1786254019751913514}
+    - targetCorrespondingSourceObject: {fileID: 2223821699887363382, guid: 10648b19612872c4f85593b236504a00,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2232723265581608982}
+  m_SourcePrefab: {fileID: 100100000, guid: 10648b19612872c4f85593b236504a00, type: 3}
+--- !u!114 &3521834366064559137 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6443777387910735989, guid: 10648b19612872c4f85593b236504a00,
+    type: 3}
+  m_PrefabInstance: {fileID: 7605723072847916116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8597493576609356130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2223821699887363382, guid: 10648b19612872c4f85593b236504a00,
+    type: 3}
+  m_PrefabInstance: {fileID: 7605723072847916116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4472258405918350241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597493576609356130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1786254019751913514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597493576609356130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df20a42eb54cd340a6023cfed98b3e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 0c543d76e0945e1458b4e8cbb1a5c17b, type: 2}
+--- !u!114 &2232723265581608982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597493576609356130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6e6b03218a9044db98a70e531ff8cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  semanticTypeId: 
+  displayNameZh: "\u91AB\u7642\u6AA2\u67E5\u7D00\u9304"
+  displayNameEn: Medical Examination Record
+  factBulletsZh:
+  - "\u684C\u9762\u4E0A\u653E\u7F6E\u4E00\u4EFD\u6587\u4EF6"
+  - "\u6587\u4EF6\u5167\u5BB9\u70BA\u689D\u5217\u5F0F\u7D00\u9304"
+  - "\u6587\u5B57\u4EE5\u6B63\u5F0F\u66F8\u5BEB\u683C\u5F0F\u5448\u73FE"
+  - "\u5167\u5BB9\u5305\u542B\u591A\u9805\u8EAB\u9AD4\u72C0\u614B\u76F8\u95DC\u7D00\u9304"
+  - "\u9801\u9762\u4E0A\u6A19\u793A\u6709\u6642\u9593\u8CC7\u8A0A"
+  factBulletsEn:
+  - A document is placed on the table
+  - The content is organized in a list format
+  - The text is written in a formal style
+  - The document contains multiple records related to physical condition
+  - A timestamp is indicated on the page
+  isChecked: 0
+  significance: 0
+  memoryStrength: 0

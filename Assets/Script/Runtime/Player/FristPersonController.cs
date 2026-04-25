@@ -163,8 +163,9 @@ public class FirstPersonController : MonoBehaviour
             if (currentTarget != null && GameInput.GameplayInput.Interact.WasPressedThisFrame)
             {
                 var actions = currentTarget.GetAvailableActions();
+                
                 if (actions.Count > 0)
-                    currentTarget.ExecuteAction(actions[0]); // TODO: Handle multiple actions
+                    currentTarget.ExecuteAction(actions[0]);
             }
         }
         else if (currentMode == Mode.Photograph)
