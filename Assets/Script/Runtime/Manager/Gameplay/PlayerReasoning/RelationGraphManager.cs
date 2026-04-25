@@ -327,16 +327,13 @@ public class RelationGraphManager : Singleton<RelationGraphManager>
         {
             if (node == null || node.evidence == null) continue;
 
-            sb.AppendLine($"Evidence: {node.evidence.displayName}");
+            sb.AppendLine($"Evidence: {node.evidence.displayNameEn}");
             sb.AppendLine($"EvidenceId: {node.evidence.evidenceId}");
 
-            if (node.evidence.factBullets != null && node.evidence.factBullets.Count > 0)
+            if (node.evidence.facts != null && node.evidence.facts.Count > 0)
             {
-                sb.AppendLine("FactBullets:");
-                foreach (var fact in node.evidence.factBullets)
-                {
-                    sb.AppendLine($"- {fact}");
-                }
+                sb.AppendLine("Facts: ");
+                sb.AppendLine(node.evidence.GetEvidenceFactsAsStringForLLM());
             }
 
             sb.AppendLine();
@@ -370,13 +367,13 @@ public class RelationGraphManager : Singleton<RelationGraphManager>
             switch (edge.relationType)
             {
                 case RelationGraphType.LEADTO:
-                    sb.AppendLine($"- {edge.fromNode.evidence.displayName} leads to {edge.toNode.evidence.displayName}");
+                    sb.AppendLine($"- {edge.fromNode.evidence.displayNameEn} leads to {edge.toNode.evidence.displayNameEn}");
                     break;
                 case RelationGraphType.CONFLICT:
-                    sb.AppendLine($"- {edge.fromNode.evidence.displayName} conflicts with {edge.toNode.evidence.displayName}");
+                    sb.AppendLine($"- {edge.fromNode.evidence.displayNameEn} conflicts with {edge.toNode.evidence.displayNameEn}");
                     break;
                 case RelationGraphType.COHERENT:
-                    sb.AppendLine($"- {edge.fromNode.evidence.displayName} is consistent with {edge.toNode.evidence.displayName}");
+                    sb.AppendLine($"- {edge.fromNode.evidence.displayNameEn} is consistent with {edge.toNode.evidence.displayNameEn}");
                     break;
             }
         }
@@ -474,7 +471,7 @@ public class RelationGraphManager : Singleton<RelationGraphManager>
         {
             if (pathSet.Contains(next))
             {
-                sb.AppendLine($"- Cycle detected: {FormatPath(path)} -> {next.evidence.displayName}");
+                sb.AppendLine($"- Cycle detected: {FormatPath(path)} -> {next.evidence.displayNameEn}");
                 continue;
             }
 
@@ -493,7 +490,7 @@ public class RelationGraphManager : Singleton<RelationGraphManager>
 
     private string FormatPath(List<RelationNode> path)
     {
-        return string.Join(" leads to ", path.ConvertAll(n => n.evidence.displayName));
+        return string.Join(" leads to ", path.ConvertAll(n => n.evidence.displayNameEn));
     }
 
     public bool IsGraphEmpty()

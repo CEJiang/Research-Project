@@ -36,7 +36,7 @@ public class EvidenceHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointe
         if (EvidenceTooltipManager.Instance != null && RelationGraphManager.Instance.currentRelationGraphType == RelationGraphType.NONE)
         {
             
-            EvidenceTooltipManager.Instance.ShowTooltip(evidence.displayName, evidence.GetEvidenceFactBulletsAsStringForUI());
+            EvidenceTooltipManager.Instance.ShowTooltip(evidence.DisplayName, evidence.GetEvidenceFactsAsStringForUI());
         }
     }
 

@@ -20,7 +20,34 @@ public class SynthesisNarratorManager : Singleton<SynthesisNarratorManager>
         var synthesisNarratorTranslationTemplateAsset = Instantiate(Resources.Load<SimplePromptTemplateAsset>(SYNTHESIS_NARRATOR_TRANSLATION_TEMPLATE_PATH));
         synthesisNarratorTranslationTemplateAsset.ApplyTo(synthesisNarratorTranslationTemplate);
 
-        promptTest = TaskLLMManager.Instance.language == TaskLLMManager.Language.English ? synthesisNarratorTemplate.prompt : synthesisNarratorTranslationTemplate.prompt;
+        promptTest = LocalizationManager.Instance.GetCurrentLanguage() == Language.English ? synthesisNarratorTemplate.prompt : synthesisNarratorTranslationTemplate.prompt;
+    }
+
+    private void OnEnable()
+    {
+        if (LocalizationManager.Instance != null)
+        {
+            LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (LocalizationManager.Instance != null)
+        {
+            LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
+        }
+    }
+
+    // 這裡接收的是你定義好的 Language Enum，邏輯更乾淨
+    private void HandleLanguageChanged()
+    {
+        RefreshPrompt();
+    }
+
+    public void RefreshPrompt()
+    {
+        promptTest = LocalizationManager.Instance.GetCurrentLanguage() == Language.English ? synthesisNarratorTemplate.prompt : synthesisNarratorTranslationTemplate.prompt;
     }
 
     public Task<string> GenerateNarration()

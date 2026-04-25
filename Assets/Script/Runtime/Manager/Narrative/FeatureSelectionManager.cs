@@ -55,7 +55,7 @@ public class FeatureSelectionManager : Singleton<FeatureSelectionManager>
 
         prompt = prompt.Replace("{{displayName}}", evidence.displayName)
                        .Replace("{{zoneAt}}", evidence.zoneAt)
-                       .Replace("{{factBullets}}", evidence.factBullets)
+                       .Replace("{{facts}}", evidence.facts)
                        .Replace("{{featureDictionary}}", featureDictionaryText);
 
         return prompt;
@@ -173,7 +173,7 @@ EVIDENCE INPUT
 ============================================================
 Name: {{displayName}}
 Zone: {{zoneAt}}
-Facts: {{factBullets}}
+Facts: {{facts}}
 
 ============================================================
 FEATURE DICTIONARY (USE ONLY THESE FEATURES)

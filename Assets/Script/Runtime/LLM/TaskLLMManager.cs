@@ -8,13 +8,6 @@ public class TaskLLMManager : BaseTaskLLMManager<TaskLLMManager>
 {
     [SerializeField] private LLMProviderType providerType;
     private ILLMProvider provider;
-    public enum Language
-    {
-        English,
-        Chinese
-    }
-    public Language language = Language.English;
-
     protected override void Initialize()
     {
         base.Initialize();

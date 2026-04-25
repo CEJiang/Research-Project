@@ -9,11 +9,7 @@ public class EvidenceMetadata
         
     public override string ToString()
     {
-        string result = $"Evidence: {evidence.displayName}\nZone: {evidence.zoneAt}\nFacts:\n";
-        foreach (var fact in evidence.factBullets)
-        {
-            result += $"- {fact}\n";
-        }
+        string result = $"Evidence: {evidence.displayName}\nZone: {evidence.zoneAt}\nFacts:{evidence.facts}\n";
 
         result += "Previous Hypothesis State:\n";
         foreach (var kvp in previousHypothesisState)

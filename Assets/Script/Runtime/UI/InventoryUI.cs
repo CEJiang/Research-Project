@@ -53,7 +53,8 @@ public class InventoryUI : MonoBehaviour
         previewImage.texture = SnapshotUtility.GetSnapshot(item.displayNameEn);
 
         ItemNameText.text = item.displayNameEn;
-        ItemDescriptionText.text = item.factBulletsEn.Count > 0 ? string.Join("\n- ", item.factBulletsEn) : "No description available.";
+        // ItemDescriptionText.text = item.facts.Count > 0 ? string.Join("\n- ", item.facts) : "No description available.";
+        ItemDescriptionText.text = "";
         item.gameObject.transform.SetParent(itemPreviewRoot.transform);
         item.gameObject.SetActive(true);
 

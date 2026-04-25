@@ -8,9 +8,7 @@ public class SemanticActionObject : MonoBehaviour
     public string semanticTypeId;
     public string displayNameZh;
     public string displayNameEn;
-
-    public List<string> factBulletsZh = new();
-    public List<string> factBulletsEn = new();
+    public List<Fact> facts;
 
     [SerializeField] private bool isChecked = false;
     [SerializeField] private ObjectSignificance significance;
@@ -29,8 +27,7 @@ public class SemanticActionObject : MonoBehaviour
     {
         get
         {
-            if (TaskLLMManager.Instance != null &&
-                TaskLLMManager.Instance.language == TaskLLMManager.Language.Chinese)
+            if (LocalizationManager.Instance.GetCurrentLanguage() == Language.Chinese)
             {
                 return displayNameZh;
             }
@@ -38,21 +35,7 @@ public class SemanticActionObject : MonoBehaviour
             return displayNameEn;
         }
     }
-
-    public IReadOnlyList<string> FactBullets
-    {
-        get
-        {
-            if (TaskLLMManager.Instance != null &&
-                TaskLLMManager.Instance.language == TaskLLMManager.Language.Chinese)
-            {
-                return factBulletsZh;
-            }
-
-            return factBulletsEn;
-        }
-    }
-
+    
     public void DecayMemoryStrength(float decayAmount)
     {
         memoryStrength = Mathf.Max(0f, memoryStrength - decayAmount);

@@ -20,8 +20,7 @@ public static class EvidenceFactory
             semanticTypeId: semanticTypeId,
             displayNameZh: semanticObject.displayNameZh,
             displayNameEn: semanticObject.displayNameEn,
-            factBulletsZh: semanticObject.factBulletsZh,
-            factBulletsEn: semanticObject.factBulletsEn,
+            facts: semanticObject.facts,
             zoneAt: zoneAt,
             imagePath: imagePath
         );
@@ -31,7 +30,7 @@ public static class EvidenceFactory
         {
             displayName = evidence.displayNameEn,
             zoneAt = evidence.zoneAt.zoneName,
-            factBullets = evidence.GetEvidenceFactBulletsAsString()
+            facts = evidence.GetEvidenceFactsAsStringForLLM()
         };
 
         // previous hypothesis state (final scores before this evidence is applied)

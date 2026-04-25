@@ -10,7 +10,7 @@ public class EvidenceListUI : MonoBehaviour
     {
         GameObject evidenceItem = Instantiate(evidenceListItemPrefab, evidenceListContent);
 
-        evidenceItem.name = evidence.displayName;
+        evidenceItem.name = evidence.DisplayName;
         EvidenceListItem evidenceListItem = evidenceItem.GetComponent<EvidenceListItem>();
         evidenceListItem?.SetEvidence(evidence);
     }

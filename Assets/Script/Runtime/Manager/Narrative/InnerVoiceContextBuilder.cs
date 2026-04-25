@@ -206,7 +206,7 @@ public static class InnerVoiceContextBuilder
             competitionState = competitionState,
             stage = stage,
 
-            lastEvidenceDisplayName = lastEvidence?.displayName ?? "unknown_evidence",
+            lastEvidenceDisplayName = lastEvidence?.displayNameEn ?? "unknown_evidence",
             lastEvidenceZone = lastEvidence?.zoneAt?.zoneName ?? "unknown_zone",
 
             signalsForDominant = forTop,

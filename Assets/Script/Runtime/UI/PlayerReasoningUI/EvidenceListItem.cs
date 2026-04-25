@@ -2,7 +2,6 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
 [RequireComponent(typeof(CanvasGroup))]
 public class EvidenceListItem : MonoBehaviour, 
     IPointerEnterHandler,
@@ -31,7 +30,38 @@ public class EvidenceListItem : MonoBehaviour,
     public void SetEvidence(Evidence evidence)
     {
         this.evidence = evidence;
-        evidenceNameText.text = evidence.displayName;
+        evidenceNameText.text = evidence.DisplayName;
+    }
+
+    private void OnEnable()
+    {
+        if (LocalizationManager.Instance != null)
+        {
+            LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (LocalizationManager.Instance != null)
+        {
+            LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
+        }
+    }
+
+    // 這裡接收的是你定義好的 Language Enum，邏輯更乾淨
+    private void HandleLanguageChanged()
+    {
+        RefreshUI();
+    }
+
+    public void RefreshUI()
+    {
+        if (evidence == null || evidenceNameText == null) return;
+        
+        // 統一透過 Evidence 內部的方法獲取當前語言顯示名稱
+        // 假設你的 Evidence 類別有實作 GetDisplayName(Language lang)
+        evidenceNameText.text = evidence.DisplayName;
     }
 
     // We can show the evidence details in a tooltip when the player hovers over the evidence item in the list. The tooltip can display information such as the evidence description, type, and any relevant clues or connections to other evidence.

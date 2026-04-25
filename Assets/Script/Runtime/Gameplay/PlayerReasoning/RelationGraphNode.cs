@@ -38,8 +38,39 @@ public class RelationNode : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
         if (label != null)
         {
-            label.text = evidence.displayName;
+            label.text = evidence.DisplayName;
         }
+    }
+
+    private void OnEnable()
+    {
+        if (LocalizationManager.Instance != null)
+        {
+            LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (LocalizationManager.Instance != null)
+        {
+            LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
+        }
+    }
+
+    // 這裡接收的是你定義好的 Language Enum，邏輯更乾淨
+    private void HandleLanguageChanged()
+    {
+        RefreshUI();
+    }
+
+    public void RefreshUI()
+    {
+        if (evidence == null || label == null) return;
+        
+        // 統一透過 Evidence 內部的方法獲取當前語言顯示名稱
+        // 假設你的 Evidence 類別有實作 GetDisplayName(Language lang)
+        label.text = evidence.DisplayName;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
