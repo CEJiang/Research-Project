@@ -25,9 +25,9 @@ public class DialogueManager : Singleton<DialogueManager>
     #endregion
 
     // Display current zone information in the Zone Info Panel
-    public void ShowCurrentZoneInfo(Zone zone)
+    public void ShowCurrentZoneInfo()
     {
-        infoUI.ShowCurrentZoneInfo(zone);
+        infoUI.ShowCurrentZoneInfo();
     }
     public void ShowInfomation(string info)
     {

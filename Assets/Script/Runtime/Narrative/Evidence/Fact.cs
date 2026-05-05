@@ -35,8 +35,8 @@ public class Fact
         return descriptionEn;
     }
 
-    public string GetDescription(string language = "Zh")
+    public string GetDescription()
     {
-        return (language == "Zh") ? descriptionZh : descriptionEn;
+        return (LocalizationManager.Instance.GetCurrentLanguage() == Language.Chinese) ? descriptionZh : descriptionEn;
     }
 }

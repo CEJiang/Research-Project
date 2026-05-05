@@ -15,7 +15,7 @@ public class ZoneManager : Singleton<ZoneManager>
     void Start()
     {
         currentZone = defaultZone;
-        DialogueManager.Instance.ShowCurrentZoneInfo(currentZone);
+        DialogueManager.Instance.ShowCurrentZoneInfo();
     }
 
     public void EntryZone(Zone zone)
@@ -37,7 +37,7 @@ public class ZoneManager : Singleton<ZoneManager>
             else
                 RecordZoneTransition(prevZone, currentZone);
 
-            DialogueManager.Instance.ShowCurrentZoneInfo(currentZone);
+            DialogueManager.Instance.ShowCurrentZoneInfo();
         }
 }
 
@@ -63,7 +63,7 @@ public class ZoneManager : Singleton<ZoneManager>
         {
             RecordZoneExit(currentZone);
             currentZone = defaultZone;
-            DialogueManager.Instance.ShowCurrentZoneInfo(currentZone);
+            DialogueManager.Instance.ShowCurrentZoneInfo();
         }
     }
 
@@ -104,6 +104,45 @@ public class ZoneManager : Singleton<ZoneManager>
     public Zone GetCurrentZone()
     {
         return currentZone;
+    }
+
+    public string GetZoneDisplayNameForLLM(Zone zone)
+    {
+        switch (zone)
+        {
+            case Zone.GuestRoom: return "Guest Room";
+            case Zone.DiningRoom: return "Dining Room";
+            case Zone.StudySideRoom: return "Study Side Room";
+            case Zone.StudyRoom: return "Study Room";
+            case Zone.ChildRoom: return "Child Room";
+            case Zone.MasterRoom: return "Master Room";
+            case Zone.StorageRoom: return "Storage Room";
+            default: return zone.ToString();
+        }
+    }
+
+    public string GetZoneDisplayNameForUI(Zone zone)
+    {
+        if (LocalizationManager.Instance.GetCurrentLanguage() == Language.Chinese)
+        {
+            switch (zone)
+            {
+                case Zone.Street: return "街道";
+                case Zone.Yard: return "庭院";
+                case Zone.Lobby: return "大廳";
+                case Zone.GuestRoom: return "客房";
+                case Zone.DiningRoom: return "飯廳";
+                case Zone.StudySideRoom: return "書房側室";
+                case Zone.StudyRoom: return "書房";
+                case Zone.ChildRoom: return "兒童房";
+                case Zone.MasterRoom: return "主臥室";
+                case Zone.StorageRoom: return "儲藏室";
+                case Zone.Stairwell: return "樓梯間";
+                case Zone.Aisle: return "走道";
+                default: return zone.ToString();
+            }
+        }
+        else return GetZoneDisplayNameForLLM(zone); // for English, we use the same display name for both LLM and UI, so we can just call GetZoneDisplayNameForLLM to avoid duplication
     }
     #endregion
 }

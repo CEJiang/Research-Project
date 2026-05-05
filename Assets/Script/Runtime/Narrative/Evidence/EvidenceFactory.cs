@@ -7,21 +7,20 @@ using System.Threading.Tasks;
 
 public static class EvidenceFactory
 {
-    public static async Task<Evidence> CreateEvidenceAsync(SemanticActionObject semanticObject, Zone zoneAt, string imagePath)
+    public static async Task<Evidence> CreateEvidenceAsync(SemanticActionObject semanticActionObject, string imagePath, List<Fact> selectedFacts = null)
     {
-        if (semanticObject == null) throw new ArgumentNullException(nameof(semanticObject));
-        if (zoneAt == null) throw new ArgumentNullException(nameof(zoneAt));
+        if (semanticActionObject == null) throw new ArgumentNullException(nameof(semanticActionObject));
 
         string evidenceId = Guid.NewGuid().ToString("N");
-        string semanticTypeId = semanticObject.semanticTypeId;
+        string semanticTypeId = semanticActionObject.semanticTypeId;
 
         Evidence evidence = new(
             evidenceId: evidenceId,
             semanticTypeId: semanticTypeId,
-            displayNameZh: semanticObject.displayNameZh,
-            displayNameEn: semanticObject.displayNameEn,
-            facts: semanticObject.facts,
-            zoneAt: zoneAt,
+            displayNameZh: semanticActionObject.displayNameZh,
+            displayNameEn: semanticActionObject.displayNameEn,
+            facts: selectedFacts,
+            zoneAt: semanticActionObject.zone,
             imagePath: imagePath
         );
 
@@ -29,7 +28,7 @@ public static class EvidenceFactory
         EvidenceModel evidenceModel = new()
         {
             displayName = evidence.displayNameEn,
-            zoneAt = evidence.zoneAt.zoneName,
+            zoneAt = ZoneManager.Instance.GetZoneDisplayNameForLLM(evidence.zoneAt),
             facts = evidence.GetEvidenceFactsAsStringForLLM()
         };
 

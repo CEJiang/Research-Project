@@ -18,12 +18,16 @@ public class UIManager : Singleton<UIManager>
     [Header("Player Reasoning UI References")]
     public PlayerReasoningUI playerReasoningUI;
 
+    [Header("Fact Selection UI References")]
+    public FactSelectionUI factSelectionUI;
+    
     public enum OpenUIType
     {
         None,
         PlayerReasoning,
         Inventory,
-        Camera
+        Camera,
+        FactSelection
     }
     public List<OpenUIType> uiStack = new();
     public Dictionary<OpenUIType, GameObject> uiDictionary = new();
@@ -43,6 +47,10 @@ public class UIManager : Singleton<UIManager>
         playerReasoningUI = FindObjectOfType<PlayerReasoningUI>();
         playerReasoningUI.gameObject.SetActive(false);
         uiDictionary[OpenUIType.PlayerReasoning] = playerReasoningUI.gameObject;
+        
+        factSelectionUI = FindObjectOfType<FactSelectionUI>();
+        factSelectionUI.gameObject.SetActive(false);
+        uiDictionary[OpenUIType.FactSelection] = factSelectionUI.gameObject;
     }
 
     public void TogglePlayerReasoningUI()
@@ -96,6 +104,41 @@ public class UIManager : Singleton<UIManager>
             UpdateUIStackAfterClosingUI();
         }
     }
+
+    public void ToggleFactSelectionUI()
+    {
+        factSelectionUI.gameObject.SetActive(!factSelectionUI.gameObject.activeSelf);
+        CursorManager.Instance.SetCursorState(factSelectionUI.gameObject.activeSelf);
+
+        if (factSelectionUI.gameObject.activeSelf)
+        {
+            // guideUI.ShowFactSelectionInputGuide();
+            FactSelectionManager.Instance.SetFactSelectionMode(FactSelectionManager.FactSelectionMode.Normal);
+            uiStack.Add(OpenUIType.FactSelection);
+
+            // Enter fact selection mode, we should close camera UI
+            // Teporarily close camera UI when entering fact selection mode
+            cameraUI.gameObject.SetActive(false);
+            PlayerControlManager.Instance.SetPlayerControlState(false, false, false, false);
+        }
+        else
+        {
+            FactSelectionManager.Instance.SetFactSelectionMode(FactSelectionManager.FactSelectionMode.None);
+            UpdateUIStackAfterClosingUI();
+
+            // Exit fact selection mode, we should return to previous camera UI
+            // When exiting fact selection mode, we should recover camera UI state based on whether player has opened camera UI before entering fact selection mode
+            cameraUI.gameObject.SetActive(true);
+            PlayerControlManager.Instance.SetPlayerControlState(true, true, true, true);
+        }
+    }
+
+    public void ChangeFactSelectionFade(bool faded)
+    {
+        factSelectionUI.SetFactUIFade(faded);
+        CursorManager.Instance.SetCursorState(!faded);
+    }
+
     public void CloseTopUI()
     {
         if (uiStack.Count == 0) return;

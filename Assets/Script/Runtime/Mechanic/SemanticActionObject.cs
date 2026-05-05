@@ -9,6 +9,7 @@ public class SemanticActionObject : MonoBehaviour
     public string displayNameZh;
     public string displayNameEn;
     public List<Fact> facts;
+    public Zone zone;
 
     [SerializeField] private bool isChecked = false;
     [SerializeField] private ObjectSignificance significance;

@@ -25,7 +25,7 @@ public class SynthesisNarratorManager : Singleton<SynthesisNarratorManager>
 
     private void OnEnable()
     {
-        if (LocalizationManager.Instance != null)
+        if (LocalizationManager.HasInstance)
         {
             LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
         }
@@ -33,7 +33,7 @@ public class SynthesisNarratorManager : Singleton<SynthesisNarratorManager>
 
     private void OnDisable()
     {
-        if (LocalizationManager.Instance != null)
+        if (LocalizationManager.HasInstance)
         {
             LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
         }

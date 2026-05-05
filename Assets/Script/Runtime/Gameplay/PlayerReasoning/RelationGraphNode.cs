@@ -44,7 +44,7 @@ public class RelationNode : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     private void OnEnable()
     {
-        if (LocalizationManager.Instance != null)
+        if (LocalizationManager.HasInstance)
         {
             LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
         }
@@ -52,7 +52,7 @@ public class RelationNode : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     private void OnDisable()
     {
-        if (LocalizationManager.Instance != null)
+        if (LocalizationManager.HasInstance)
         {
             LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
         }

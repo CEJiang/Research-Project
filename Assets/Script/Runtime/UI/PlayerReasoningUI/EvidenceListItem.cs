@@ -35,7 +35,7 @@ public class EvidenceListItem : MonoBehaviour,
 
     private void OnEnable()
     {
-        if (LocalizationManager.Instance != null)
+        if (LocalizationManager.HasInstance)
         {
             LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
         }
@@ -43,7 +43,7 @@ public class EvidenceListItem : MonoBehaviour,
 
     private void OnDisable()
     {
-        if (LocalizationManager.Instance != null)
+        if (LocalizationManager.HasInstance)
         {
             LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
         }

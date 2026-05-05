@@ -29,6 +29,12 @@ public class CursorManager : Singleton<CursorManager>
     {
         if (GameInput.UIInput.Escape.WasPressedThisFrame)
         {
+            if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.FactSelection)
+            {
+                FactSelectionManager.Instance.ChangeFactSelectionUIMode();
+                return;
+            }
+
             if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.PlayerReasoning && RelationGraphManager.Instance.firstNode != null)
             {
                 RelationGraphManager.Instance.firstNode = null;

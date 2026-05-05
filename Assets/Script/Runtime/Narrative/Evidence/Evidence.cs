@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEditor.Localization.Editor;
+using UnityEngine.SocialPlatforms;
 
 public class Evidence
 {

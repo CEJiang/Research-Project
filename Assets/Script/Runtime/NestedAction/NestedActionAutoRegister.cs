@@ -7,6 +7,7 @@ public class NestedActionAutoRegister : MonoBehaviour
     public string displayNameZh;
     public string displayNameEn;
     public List<Fact> facts;
+    public Zone zone;
     void Start()
     {
         // 取得所有子物件 collider
@@ -21,6 +22,7 @@ public class NestedActionAutoRegister : MonoBehaviour
                 sao.displayNameZh = displayNameZh;
                 sao.displayNameEn = displayNameEn;
                 sao.facts = facts;
+                sao.zone = zone;
                 Debug.Log($"[NestedActionAutoRegister] Added SemanticActionObject to: {col.gameObject.name}");
             }
         }

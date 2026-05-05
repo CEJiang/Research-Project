@@ -6,13 +6,13 @@ public static class SemanticActionTemplates
 {
     #region Zone Actions
     public static string EntryZone(Zone zone) =>
-        $"The player has entered the zone: {zone.zoneName}.";
+        $"The player has entered the zone: {ZoneManager.Instance.GetZoneDisplayNameForLLM(zone)}.";
 
     public static string ExitZone(Zone zone) =>
-        $"The player has exited the zone: {zone.zoneName}.";
+        $"The player has exited the zone: {ZoneManager.Instance.GetZoneDisplayNameForLLM(zone)}.";
     
     public static string TransitionZone(Zone prevZone, Zone currentZone) =>
-        $"The player has moved from zone: {prevZone.zoneName} to zone: {currentZone.zoneName}.";
+        $"The player has moved from zone: {ZoneManager.Instance.GetZoneDisplayNameForLLM(prevZone)} to zone: {ZoneManager.Instance.GetZoneDisplayNameForLLM(currentZone)}.";
     #endregion
 
     #region Object Actions

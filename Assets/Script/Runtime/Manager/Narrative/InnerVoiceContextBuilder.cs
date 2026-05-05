@@ -201,13 +201,13 @@ public static class InnerVoiceContextBuilder
 
             deltaDominant = deltaTop,
             deltaChallenger = deltaSecond,
-
+    
             dominantShift = dominantShift,
             competitionState = competitionState,
             stage = stage,
 
             lastEvidenceDisplayName = lastEvidence?.displayNameEn ?? "unknown_evidence",
-            lastEvidenceZone = lastEvidence?.zoneAt?.zoneName ?? "unknown_zone",
+            lastEvidenceZone = lastEvidence != null ? ZoneManager.Instance.GetZoneDisplayNameForLLM(lastEvidence.zoneAt) : "unknown_zone",
 
             signalsForDominant = forTop,
             signalsAgainstDominant = againstTop,

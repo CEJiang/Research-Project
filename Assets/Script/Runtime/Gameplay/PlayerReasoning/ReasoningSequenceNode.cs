@@ -41,7 +41,7 @@ public class ReasoningSequenceNode : MonoBehaviour, IBeginDragHandler, IDragHand
 
     private void OnEnable()
     {
-        if (LocalizationManager.Instance != null)
+        if (LocalizationManager.HasInstance)
         {
             LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
         }
@@ -49,7 +49,7 @@ public class ReasoningSequenceNode : MonoBehaviour, IBeginDragHandler, IDragHand
 
     private void OnDisable()
     {
-        if (LocalizationManager.Instance != null)
+        if (LocalizationManager.HasInstance)
         {
             LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
         }

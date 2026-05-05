@@ -1,41 +1,38 @@
 using UnityEngine;
 
-public class Singleton<T> : MonoBehaviour where T : Component {
-
+public class Singleton<T> : MonoBehaviour where T : Component
+{
     private static T instance;
+    private static bool isQuitting;
+
+    public static bool HasInstance => instance != null;
 
     public static T Instance
     {
         get
         {
-            // Not initialized yet
+            if (isQuitting)
+                return null;
+
             if (instance == null)
             {
-                // Try to find the instance
-                var objects = FindObjectsOfType<T>();
+                T[] objects = FindObjectsOfType<T>();
 
                 if (objects.Length > 0)
                 {
-                    // Return the instance found in the scene
-                    Logger.Developer($"{typeof(T)} Singleton found.");
-                    
+                    instance = objects[0];
+
                     if (objects.Length > 1)
                     {
                         Logger.Error($"Found more than one {typeof(T)} in the scene.");
                     }
-                    else
-                    {
-                        return objects[0];
-                    }
+
+                    Logger.Developer($"{typeof(T)} Singleton found.");
+                    return instance;
                 }
-                else
-                {
-                    // Create a new instance if not found in the scene
-                    GameObject object_ = new();
-                    instance = object_.AddComponent<T>();
-                    object_.name = typeof(T).ToString();
-                    Logger.Warning($"{typeof(T)} Singleton created.");
-                }
+
+                Logger.Warning($"{typeof(T)} Singleton not found in scene.");
+                return null;
             }
 
             return instance;
@@ -46,8 +43,8 @@ public class Singleton<T> : MonoBehaviour where T : Component {
     {
         if (instance == null)
         {
-            Logger.Developer($"{typeof(T)} Singleton awake.");
             instance = this as T;
+            Logger.Developer($"{typeof(T)} Singleton awake.");
         }
         else if (instance == this)
         {
@@ -60,16 +57,17 @@ public class Singleton<T> : MonoBehaviour where T : Component {
         }
     }
 
+    protected virtual void OnApplicationQuit()
+    {
+        isQuitting = true;
+    }
+
     protected virtual void OnDestroy()
     {
         if (instance == this)
         {
             Logger.Developer($"{typeof(T)} Singleton destroyed.");
             instance = null;
-        }
-        else
-        {
-            Logger.Developer($"Destroy duplicated {typeof(T)} object.");
         }
     }
 }

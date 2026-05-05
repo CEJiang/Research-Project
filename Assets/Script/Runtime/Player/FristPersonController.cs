@@ -62,7 +62,7 @@ public class FirstPersonController : MonoBehaviour
         if (isLookable) HandleLook();
         if (isInteractable) HandleRaycast();
         if (isInteractable) HandleInteraction();
-        if(isOpenableUI) HandleUIInput();
+        if (isOpenableUI) HandleUIInput();
     }
 
     #region Movement
@@ -192,9 +192,7 @@ public class FirstPersonController : MonoBehaviour
                     }
 
                     string imagePath = SnapshotEvidenceUtility.SnapshotEvidence();
-                    Zone currentZone = ZoneManager.Instance.GetCurrentZone();
-                    EvidenceManager.Instance.AddEvidence(semanticActionObject, 
-                                                                currentZone, imagePath);
+                    EvidenceManager.Instance.SelectEvidenceFacts(semanticActionObject, imagePath);
                 }
             }
         }
@@ -231,10 +229,6 @@ public class FirstPersonController : MonoBehaviour
         if (GameInput.UIInput.PlayerReasoning.WasPressedThisFrame)
         {
             UIManager.Instance.TogglePlayerReasoningUI();
-        }
-        if (GameInput.UIInput.Inventory.WasPressedThisFrame)
-        {
-            UIManager.Instance.ToggleInventoryUI();
         }
         if (GameInput.UIInput.Camera.WasPressedThisFrame)
         {

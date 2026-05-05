@@ -61,7 +61,7 @@ public class UIInput : PlayerControls.IUIActions
     public void OnCamera(InputAction.CallbackContext context)
     {
         bool isPressed = context.ReadValueAsButton();
-
+        
         if (isPressed) Camera.Press(); else Camera.Release();
     }
 

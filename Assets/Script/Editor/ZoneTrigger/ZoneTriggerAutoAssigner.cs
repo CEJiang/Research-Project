@@ -15,12 +15,6 @@ public class ZoneTriggerAutoAssigner : MonoBehaviour
     {
         if (Application.isPlaying) return;
 
-        if (zoneData == null)
-        {
-            Debug.LogError($"Zone data not found for {name} in Resources/Zones/");
-            return;
-        }
-
         List<Collider> colliders = new(GetComponentsInChildren<Collider>());
         foreach (var collider in colliders)
         {
@@ -37,7 +31,6 @@ public class ZoneTriggerAutoAssigner : MonoBehaviour
     private void OnValidate()
     {
         if (Application.isPlaying) return;
-        if (zoneData == null) return;
 
         var ZoneTriggers = GetComponentsInChildren<ZoneTrigger>(true);
         foreach (var tz in ZoneTriggers)

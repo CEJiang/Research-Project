@@ -1,9 +1,16 @@
-
-using UnityEngine;
-
-[CreateAssetMenu(menuName = "Gameplay/Zone")]
-public class Zone : ScriptableObject
+public enum Zone
 {
-    public string zoneName;
-    public string description;
+    Default,
+    Street,
+    Yard,
+    Lobby,
+    DiningRoom,
+    GuestRoom,
+    StudyRoom,
+    StudySideRoom,
+    Stairwell,
+    StorageRoom,
+    Aisle,
+    ChildRoom,
+    MasterRoom,
 }
