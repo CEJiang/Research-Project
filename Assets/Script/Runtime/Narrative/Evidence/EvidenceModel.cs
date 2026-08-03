@@ -6,5 +6,5 @@ public class EvidenceModel
 {
     public string displayName;
     public string zoneAt;
-    public string facts;
+    public string observationCandidates;
 }

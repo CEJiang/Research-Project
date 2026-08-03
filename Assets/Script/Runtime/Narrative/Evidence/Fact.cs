@@ -1,32 +1,19 @@
 using System;
-using UnityEngine;
 
-// 使用 Enum 方便後續研究數據統計 (Spatial, Temporal, Interaction, Existence)
-public enum FactDimension
-{
-    Spatial,
-    Temporal,
-    Interaction,
-    Existence
-}
-
-[Serializable] // 讓這個類別可以在 Inspector 或 JsonUtility 中被序列化
+[Serializable]
 public class Fact
 {
     public string factID;
-    public FactDimension dimension;
     public string descriptionZh;
     public string descriptionEn;
     public string featureID;
 
-    // 建構子
-    public Fact(string id, FactDimension dim, string zh, string en, string featID)
+    public Fact(string factID, string descriptionZh, string descriptionEn, string featureID)
     {
-        factID = id;
-        dimension = dim;
-        descriptionZh = zh;
-        descriptionEn = en;
-        featureID = featID;
+        this.factID = factID;
+        this.descriptionZh = descriptionZh;
+        this.descriptionEn = descriptionEn;
+        this.featureID = featureID;
     }
 
     public string GetDescriptionForLLM()
@@ -35,7 +22,7 @@ public class Fact
         return descriptionEn;
     }
 
-    public string GetDescription()
+    public string GetDescriptionForUI()
     {
         return (LocalizationManager.Instance.GetCurrentLanguage() == Language.Chinese) ? descriptionZh : descriptionEn;
     }

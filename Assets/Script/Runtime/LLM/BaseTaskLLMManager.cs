@@ -16,7 +16,6 @@ public abstract class BaseTaskLLMManager<T> : Singleton<T>, ITaskLLMManager wher
     /// Stateless task execution
     /// </summary>
     public abstract Task<string> RunTask(
-        string systemPrompt,
         string userInput,
         JsonSchemaFormat format = default
     );

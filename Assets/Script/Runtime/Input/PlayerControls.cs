@@ -175,7 +175,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""RelationGraph"",
+                    ""name"": ""ReasoningGraphDelete"",
                     ""type"": ""Button"",
                     ""id"": ""399651dc-71a8-4bce-89ff-865b22c8eb7b"",
                     ""expectedControlType"": ""Button"",
@@ -245,7 +245,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RelationGraph"",
+                    ""action"": ""ReasoningGraphDelete"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -256,7 +256,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RelationGraph"",
+                    ""action"": ""ReasoningGraphDelete"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -345,7 +345,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_UI_Esc = m_UI.FindAction("Esc", throwIfNotFound: true);
         m_UI_Inventory = m_UI.FindAction("Inventory", throwIfNotFound: true);
         m_UI_PlayerReasoning = m_UI.FindAction("PlayerReasoning", throwIfNotFound: true);
-        m_UI_RelationGraph = m_UI.FindAction("RelationGraph", throwIfNotFound: true);
+        m_UI_ReasoningGraphDelete = m_UI.FindAction("ReasoningGraphDelete", throwIfNotFound: true);
         m_UI_Camera = m_UI.FindAction("Camera", throwIfNotFound: true);
         // Mouse
         m_Mouse = asset.FindActionMap("Mouse", throwIfNotFound: true);
@@ -516,7 +516,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_Esc;
     private readonly InputAction m_UI_Inventory;
     private readonly InputAction m_UI_PlayerReasoning;
-    private readonly InputAction m_UI_RelationGraph;
+    private readonly InputAction m_UI_ReasoningGraphDelete;
     private readonly InputAction m_UI_Camera;
     public struct UIActions
     {
@@ -525,7 +525,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Esc => m_Wrapper.m_UI_Esc;
         public InputAction @Inventory => m_Wrapper.m_UI_Inventory;
         public InputAction @PlayerReasoning => m_Wrapper.m_UI_PlayerReasoning;
-        public InputAction @RelationGraph => m_Wrapper.m_UI_RelationGraph;
+        public InputAction @ReasoningGraphDelete => m_Wrapper.m_UI_ReasoningGraphDelete;
         public InputAction @Camera => m_Wrapper.m_UI_Camera;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
@@ -545,9 +545,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @PlayerReasoning.started += instance.OnPlayerReasoning;
             @PlayerReasoning.performed += instance.OnPlayerReasoning;
             @PlayerReasoning.canceled += instance.OnPlayerReasoning;
-            @RelationGraph.started += instance.OnRelationGraph;
-            @RelationGraph.performed += instance.OnRelationGraph;
-            @RelationGraph.canceled += instance.OnRelationGraph;
+            @ReasoningGraphDelete.started += instance.OnReasoningGraphDelete;
+            @ReasoningGraphDelete.performed += instance.OnReasoningGraphDelete;
+            @ReasoningGraphDelete.canceled += instance.OnReasoningGraphDelete;
             @Camera.started += instance.OnCamera;
             @Camera.performed += instance.OnCamera;
             @Camera.canceled += instance.OnCamera;
@@ -564,9 +564,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @PlayerReasoning.started -= instance.OnPlayerReasoning;
             @PlayerReasoning.performed -= instance.OnPlayerReasoning;
             @PlayerReasoning.canceled -= instance.OnPlayerReasoning;
-            @RelationGraph.started -= instance.OnRelationGraph;
-            @RelationGraph.performed -= instance.OnRelationGraph;
-            @RelationGraph.canceled -= instance.OnRelationGraph;
+            @ReasoningGraphDelete.started -= instance.OnReasoningGraphDelete;
+            @ReasoningGraphDelete.performed -= instance.OnReasoningGraphDelete;
+            @ReasoningGraphDelete.canceled -= instance.OnReasoningGraphDelete;
             @Camera.started -= instance.OnCamera;
             @Camera.performed -= instance.OnCamera;
             @Camera.canceled -= instance.OnCamera;
@@ -663,7 +663,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnEsc(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnPlayerReasoning(InputAction.CallbackContext context);
-        void OnRelationGraph(InputAction.CallbackContext context);
+        void OnReasoningGraphDelete(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
     }
     public interface IMouseActions

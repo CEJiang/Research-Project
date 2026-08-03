@@ -6,7 +6,8 @@ public class NestedActionAutoRegister : MonoBehaviour
 {
     public string displayNameZh;
     public string displayNameEn;
-    public List<Fact> facts;
+    public string spatialContext;
+    public List<ObservationCandidate> observationCandidates;
     public Zone zone;
     void Start()
     {
@@ -21,7 +22,8 @@ public class NestedActionAutoRegister : MonoBehaviour
                 var sao = col.gameObject.AddComponent<SemanticActionObject>();
                 sao.displayNameZh = displayNameZh;
                 sao.displayNameEn = displayNameEn;
-                sao.facts = facts;
+                sao.observationCandidates = observationCandidates;
+                sao.spatialContext = spatialContext;
                 sao.zone = zone;
                 Debug.Log($"[NestedActionAutoRegister] Added SemanticActionObject to: {col.gameObject.name}");
             }

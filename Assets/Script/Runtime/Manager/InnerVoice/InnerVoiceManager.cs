@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InnerVoiceManager : Singleton<InnerVoiceManager>
+public class ReflectiveVoiceManager : Singleton<ReflectiveVoiceManager>
 {
-    private const string SYSTEM_TEMPLATE_PATH = "Prompts/IVoiceSystem";
-    private const string TRANSLATION_TEMPLATE_PATH = "Prompts/IVoiceTranslation";
+    private const string SYSTEM_TEMPLATE_PATH = "Prompts/RVoiceSystem";
+    private const string TRANSLATION_TEMPLATE_PATH = "Prompts/RVoiceTranslation";
 
     [Header("Prompt")]
     [SerializeField] private SystemPromptTemplate systemTemplate;
@@ -18,7 +18,7 @@ public class InnerVoiceManager : Singleton<InnerVoiceManager>
     public string Translation { get; private set; }
     public AudioClip AudioClip { get; private set; }
 
-    public event Action<string, AudioClip> OnInnerVoiceGenerated;
+    public event Action<string, AudioClip> OnReflectiveVoiceGenerated;
     public event Action<string> OnTranslationReady;
 
     void Start()
@@ -41,12 +41,12 @@ public class InnerVoiceManager : Singleton<InnerVoiceManager>
         prompt = PromptBuilder.Build(translationTemplate);
         LLMManager.Instance.StartNewConversation(Client.Translation, prompt);
 
-        Logger.Log(this, "Inner Voice Initialized");
+        Logger.Log(this, "Reflective Voice Initialized");
     }
 
-    public void GenerateInnerVoice()
+    public void GenerateReflectiveVoice()
     {
-        Debug.Log("Generating Inner Voice...");
+        Debug.Log("Generating Reflective Voice...");
         HandleNarrativeAsync();
     }
 
@@ -77,7 +77,7 @@ public class InnerVoiceManager : Singleton<InnerVoiceManager>
     // private async void HandleTTSAsync(string response)
     // {
     //     AudioClip = await PiperManager.Instance.TextToSpeech(response);
-    //     OnInnerVoiceGenerated?.Invoke(Response, AudioClip);
+    //     OnReflectiveVoiceGenerated?.Invoke(Response, AudioClip);
     // }
 
 #region Setters

@@ -89,7 +89,7 @@ public class EvidenceListItem : MonoBehaviour,
 
     #region Drag and Drop
     
-    // Drag the evidence item to the evidence relation graph or Reasoning Sequence to use it.
+    // Drag the evidence item to the evidence reasoning graph or Reasoning Sequence to use it.
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (canvas == null) return;
@@ -109,7 +109,7 @@ public class EvidenceListItem : MonoBehaviour,
     }
 
     // While dragging, update the position of the evidence item to follow the mouse cursor.
-    // Maybe we can show a block to indicate the valid drop targets (e.g., evidence relation graph or Reasoning Sequence) when dragging the evidence item.
+    // Maybe we can show a block to indicate the valid drop targets (e.g., evidence reasoning graph or Reasoning Sequence) when dragging the evidence item.
     public void OnDrag(PointerEventData eventData)
     {
         if (canvas == null) return;
@@ -118,7 +118,7 @@ public class EvidenceListItem : MonoBehaviour,
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
-    // When the player releases the mouse button, check if the evidence item is dropped on a valid target (e.g., evidence relation graph or Reasoning Sequence) or check if it yet exists in the evidence relation graph. If it is, use the evidence item in that context.
+    // When the player releases the mouse button, check if the evidence item is dropped on a valid target (e.g., evidence reasoning graph or Reasoning Sequence) or check if it yet exists in the evidence reasoning graph. If it is, use the evidence item in that context.
     public void OnEndDrag(PointerEventData eventData)
     {
         // Restore this source item back to the evidence list.

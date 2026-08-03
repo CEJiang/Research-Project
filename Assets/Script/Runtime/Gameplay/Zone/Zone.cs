@@ -1,16 +1,10 @@
-public enum Zone
+using System.Collections.Generic;
+
+[System.Serializable]
+public class Zone
 {
-    Default,
-    Street,
-    Yard,
-    Lobby,
-    DiningRoom,
-    GuestRoom,
-    StudyRoom,
-    StudySideRoom,
-    Stairwell,
-    StorageRoom,
-    Aisle,
-    ChildRoom,
-    MasterRoom,
+    public string zoneID;
+    public string DisplayNameEn;
+    public string DisplayNameCh;
+    public List<string> adjacentZoneIDs = new();
 }

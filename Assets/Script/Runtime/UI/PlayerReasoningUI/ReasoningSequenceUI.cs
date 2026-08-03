@@ -44,7 +44,7 @@ public class ReasoningSequenceUI : MonoBehaviour,
 
         Evidence evidence = item.evidence;
 
-        if (existingEvidenceIds.Contains(evidence.evidenceId))
+        if (existingEvidenceIds.Contains(evidence.evidenceID))
         {
             HideInsertionMarker();
             return;
@@ -69,13 +69,13 @@ public class ReasoningSequenceUI : MonoBehaviour,
         insertIndex = Mathf.Clamp(insertIndex, 0, sequenceLayer.childCount - 1);
         newNode.transform.SetSiblingIndex(insertIndex);
 
-        existingEvidenceIds.Add(evidence.evidenceId);
+        existingEvidenceIds.Add(evidence.evidenceID);
     }
 
     public void RemoveEvidence(Evidence evidence)
     {
         if (evidence == null) return;
-        existingEvidenceIds.Remove(evidence.evidenceId);
+        existingEvidenceIds.Remove(evidence.evidenceID);
     }
 
     public void UpdateInsertionMarker(Vector2 pointerScreenPosition, Camera eventCamera)

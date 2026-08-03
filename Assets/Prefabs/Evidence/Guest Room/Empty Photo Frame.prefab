@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5726336584076554808
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.044983
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4190006
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 47.524994
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.57511646
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.57511646
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.41138917
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.41138917
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 71.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      propertyPath: m_Name
+      value: Empty Photo Frame
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2038112478620958613}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4484854444037126345}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4331368109955026649}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73e6b8b4d76497b458a49e53038f1f07,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2594530911376255015}
+  m_SourcePrefab: {fileID: 100100000, guid: 73e6b8b4d76497b458a49e53038f1f07, type: 3}
+--- !u!1 &4880038432345804649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 73e6b8b4d76497b458a49e53038f1f07,
+    type: 3}
+  m_PrefabInstance: {fileID: 5726336584076554808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2038112478620958613
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880038432345804649}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2530988280945247426, guid: 73e6b8b4d76497b458a49e53038f1f07, type: 3}
+--- !u!114 &4484854444037126345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880038432345804649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &4331368109955026649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880038432345804649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df20a42eb54cd340a6023cfed98b3e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions: []
+--- !u!114 &2594530911376255015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880038432345804649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6e6b03218a9044db98a70e531ff8cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  semanticTypeID: 
+  displayNameZh: "\u7A7A\u76F8\u6846"
+  displayNameEn: Empty Photo Frame
+  observationCandidates: []
+  spatialContext: The photo frame is located on a side table beside the window in
+    the guest room.
+  zone: 0
+  isChecked: 0
+  significance: 0
+  memoryStrength: 0

@@ -25,17 +25,21 @@ public class SynthesisNarratorManager : Singleton<SynthesisNarratorManager>
 
     private void OnEnable()
     {
-        if (LocalizationManager.HasInstance)
+        var localizationManager = LocalizationManager.Instance;
+
+        if (localizationManager != null)
         {
-            LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
+            localizationManager.OnLanguageChanged += HandleLanguageChanged;
         }
     }
 
     private void OnDisable()
     {
-        if (LocalizationManager.HasInstance)
+        var localizationManager = LocalizationManager.Instance;
+
+        if (localizationManager != null)
         {
-            LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
+            localizationManager.OnLanguageChanged -= HandleLanguageChanged;
         }
     }
 
@@ -62,7 +66,6 @@ public class SynthesisNarratorManager : Singleton<SynthesisNarratorManager>
         Debug.Log("[SynthesisNarratorManager] Prompt: " + prompt);
 
         string response = await TaskLLMManager.Instance.RunTask(
-            promptTest,
             prompt
         );
 
@@ -74,9 +77,9 @@ public class SynthesisNarratorManager : Singleton<SynthesisNarratorManager>
     private string BuildSynthesisNarratorPrompt()
     {
         string prompt = promptTest;
-        var innerVoiceContext = HypothesisStateManager.Instance.latestInnerVoiceContext;
+        var evidenceDrivenContext = HypothesisStateManager.Instance.latestEvidenceDrivenContext.reflectionSummary;
 
-        return prompt.Replace("{INNER_VOICE_CONTEXT_JSON}", JsonUtility.ToJson(innerVoiceContext));
+        return prompt.Replace("{REFLECTIVE_VOICE_CONTEXT_JSON}", JsonUtility.ToJson(evidenceDrivenContext));
     }
 }
 
@@ -97,7 +100,7 @@ Do NOT:
 * sound like a report or deduction
 * use abstract or vague expressions not grounded in the scene
 
-Use ONLY the Inner Voice Context below.
+Use ONLY the Reflective Voice Context below.
 
 Your sentence must:
 
@@ -122,8 +125,8 @@ Additional rules:
 * avoid generic phrases like "something feels off" or "something is missing" without specifying what
 * avoid poetic or unrelated metaphors
 
-Inner Voice Context (JSON):
-{INNER_VOICE_CONTEXT_JSON}
+Reflective Voice Context (JSON):
+{REFLECTIVE_VOICE_CONTEXT_JSON}
 
 Output:
 One short inner monologue sentence (≤ 50 words).
@@ -148,7 +151,7 @@ Do NOT:
 * sound like a report or deduction
 * use abstract or vague expressions not grounded in the scene
 
-Use ONLY the Inner Voice Context below.
+Use ONLY the Reflective Voice Context below.
 
 Your sentence must:
 
@@ -175,8 +178,8 @@ Additional rules:
 * avoid reasoning words like "fits", "explains", "suggests"
 * avoid poetic or unrelated metaphors
 
-Inner Voice Context (JSON):
-{INNER_VOICE_CONTEXT_JSON}
+Reflective Voice Context (JSON):
+{REFLECTIVE_VOICE_CONTEXT_JSON}
 
 Output:
 One short inner monologue sentence in Traditional Chinese (繁體中文), maximum 50 words.

@@ -29,23 +29,23 @@ public class CursorManager : Singleton<CursorManager>
     {
         if (GameInput.UIInput.Escape.WasPressedThisFrame)
         {
-            if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.FactSelection)
+            if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.ObservationSelection)
             {
-                FactSelectionManager.Instance.ChangeFactSelectionUIMode();
+                ObservationSelectionManager.Instance.ChangeObservationSelectionUIMode();
                 return;
             }
 
-            if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.PlayerReasoning && RelationGraphManager.Instance.firstNode != null)
+            if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.PlayerReasoning && ReasoningGraphManager.Instance.firstNode != null)
             {
-                RelationGraphManager.Instance.firstNode = null;
-                RelationGraphManager.Instance.relationGraphPreviewEdge.EndPreview();
+                ReasoningGraphManager.Instance.firstNode = null;
+                ReasoningGraphManager.Instance.reasoningGraphPreviewEdge.EndPreview();
 
                 return;
             }
 
-            if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.PlayerReasoning && RelationGraphManager.Instance.currentRelationGraphType != RelationGraphType.NONE)
+            if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.PlayerReasoning && ReasoningGraphManager.Instance.currentReasoningGraphType != ReasoningGraphType.NONE)
             {
-                RelationGraphManager.Instance.SetCurrentRelationGraphType(RelationGraphType.NONE);
+                ReasoningGraphManager.Instance.SetCurrentReasoningGraphType(ReasoningGraphType.NONE);
                 return;
             }
 

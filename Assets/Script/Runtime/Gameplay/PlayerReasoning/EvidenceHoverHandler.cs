@@ -5,8 +5,8 @@ public class EvidenceHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointe
 {
     public enum ObjectType
     {
-        EvidneceListItem,
-        RelationGraphNode,
+        EvidenceListItem,
+        ReasoningGraphNode,
         SequenceNode
     }
     public ObjectType objectType;
@@ -16,13 +16,13 @@ public class EvidenceHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointe
     {
         switch (objectType)
         {
-            case ObjectType.EvidneceListItem:
+            case ObjectType.EvidenceListItem:
                 // Initialization code for evidence list item
                 evidence = GetComponent<EvidenceListItem>()?.evidence;
                 break;
-            case ObjectType.RelationGraphNode:
-                // Initialization code for relation graph node
-                evidence = GetComponent<RelationNode>()?.evidence;
+            case ObjectType.ReasoningGraphNode:
+                // Initialization code for reasoning graph node
+                evidence = GetComponent<ReasoningGraphNode>()?.evidence;
                 break;
             case ObjectType.SequenceNode:
                 // Initialization code for sequence node
@@ -33,10 +33,10 @@ public class EvidenceHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointe
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (EvidenceTooltipManager.Instance != null && RelationGraphManager.Instance.currentRelationGraphType == RelationGraphType.NONE)
+        if (EvidenceTooltipManager.Instance != null && ReasoningGraphManager.Instance.currentReasoningGraphType == ReasoningGraphType.NONE)
         {
             
-            EvidenceTooltipManager.Instance.ShowTooltip(evidence.DisplayName, evidence.GetEvidenceFactsAsStringForUI());
+            EvidenceTooltipManager.Instance.ShowTooltip(evidence.DisplayName, evidence.GetFactsAsStringForUI());
         }
     }
 

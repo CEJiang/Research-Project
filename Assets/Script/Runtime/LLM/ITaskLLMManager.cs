@@ -6,7 +6,6 @@ using UnityEngine;
 public interface ITaskLLMManager
 {
     Task<string> RunTask(
-        string systemPrompt,
         string userInput,
         JsonSchemaFormat format = default
     );

@@ -5,17 +5,18 @@ using UnityEngine;
 public class SemanticActionObject : MonoBehaviour
 {
     [Header("Identity (Authoring)")]
-    public string semanticTypeId;
+    public string semanticTypeID;
     public string displayNameZh;
     public string displayNameEn;
-    public List<Fact> facts;
+    public List<ObservationCandidate> observationCandidates;
+    public string spatialContext;
     public Zone zone;
 
     [SerializeField] private bool isChecked = false;
     [SerializeField] private ObjectSignificance significance;
     public float memoryStrength = 0f;
 
-    public string SemanticTypeId => semanticTypeId;
+    public string SemanticTypeID => semanticTypeID;
     public bool IsChecked
     {
         get => isChecked;

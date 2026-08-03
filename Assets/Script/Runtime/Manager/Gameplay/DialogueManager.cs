@@ -14,8 +14,8 @@ public class DialogueManager : Singleton<DialogueManager>
         dialogueUI.ClearMessages();
     }
 
-    #region Inner Voice
-    public void ShowInnerVoiceMessage(string message, string translationMessage = "")
+    #region Reflective Voice
+    public void ShowReflectiveVoiceMessage(string message, string translationMessage = "")
     {
         dialogueUI.SetPrimaryText(message);
         dialogueUI.SetSecondaryText(translationMessage);

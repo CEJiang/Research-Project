@@ -30,7 +30,6 @@ public class ReasoningValidityManager : Singleton<ReasoningValidityManager>
         Debug.Log("[ReasoningValidityManager] Prompt: " + prompt);
 
         string response = await TaskLLMManager.Instance.RunTask(
-            reasoningValidityTemplate.prompt,
             prompt
         );
 
@@ -41,8 +40,8 @@ public class ReasoningValidityManager : Singleton<ReasoningValidityManager>
 
     private string BuildReasoningValidityPrompt()
     {
-        string relationGraphData = RelationGraphManager.Instance.GetRelationGraphDataForLLM();
-        return reasoningValidityTemplate.prompt.Replace("{RELATION_GRAPH_DATA}", relationGraphData);
+        string reasoningGraphData = ReasoningGraphManager.Instance.GetReasoningGraphDataForLLM();
+        return reasoningValidityTemplate.prompt.Replace("{REASONING_GRAPH_DATA}", reasoningGraphData);
     }
 
     private ReasoningValidityResult ParseLLMResponse(string response)
@@ -144,9 +143,9 @@ public class ReasoningValidityManager : Singleton<ReasoningValidityManager>
             issue.fromNode ??= "";
             issue.toNode ??= "";
 
-            issue.relation = string.IsNullOrWhiteSpace(issue.relation)
+            issue.reasoning = string.IsNullOrWhiteSpace(issue.reasoning)
                 ? ""
-                : issue.relation.Trim().ToLowerInvariant();
+                : issue.reasoning.Trim().ToLowerInvariant();
 
             issue.description ??= "";
             issue.severity = Mathf.Clamp01(issue.severity);
@@ -168,7 +167,7 @@ public class ReasoningValidityManager : Singleton<ReasoningValidityManager>
                     type = "parse_failed",
                     fromNode = "",
                     toNode = "",
-                    relation = "",
+                    reasoning = "",
                     description = "Unexpected validity value returned by LLM.",
                     severity = 1f
                 }
@@ -182,7 +181,7 @@ public class ReasoningValidityManager : Singleton<ReasoningValidityManager>
             result.primaryIssue != "contradiction" &&
             result.primaryIssue != "missing_link" &&
             result.primaryIssue != "unsupported_jump" &&
-            result.primaryIssue != "weak_relation" &&
+            result.primaryIssue != "weak_reasoning" &&
             result.primaryIssue != "parse_failed")
         {
             result.primaryIssue = "none";
@@ -221,7 +220,7 @@ public class ReasoningValidityManager : Singleton<ReasoningValidityManager>
                     type = issueType,
                     fromNode = "",
                     toNode = "",
-                    relation = "",
+                    reasoning = "",
                     description = description,
                     severity = 1f
                 }
@@ -233,10 +232,10 @@ public class ReasoningValidityManager : Singleton<ReasoningValidityManager>
 [Serializable]
 public class ReasoningIssue
 {
-    public string type;        // contradiction / missing_link / unsupported_jump / weak_relation
+    public string type;        // contradiction / missing_link / unsupported_jump / weak_reasoning
     public string fromNode;    // 問題邊的起點
     public string toNode;      // 問題邊的終點
-    public string relation;    // leads to / conflicts with / is consistent with
+    public string reasoning;    // leads to / conflicts with / is consistent with
     public string description; // 為什麼這條 edge 有問題
     public float severity;     // 0~1
 }
@@ -246,6 +245,6 @@ public class ReasoningValidityResult
 {
     public string validity;          // valid / partially_valid / invalid
     public bool scoringAllowed;
-    public string primaryIssue;      // none / contradiction / missing_link / unsupported_jump / weak_relation
+    public string primaryIssue;      // none / contradiction / missing_link / unsupported_jump / weak_reasoning
     public List<ReasoningIssue> issues;
 }

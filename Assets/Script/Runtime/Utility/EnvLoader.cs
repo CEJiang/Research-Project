@@ -16,6 +16,8 @@ public static class EnvLoader
             return null;
         }
 
+        Logger.Log($"[EnvLoader] Loading .env file from path: {envFilePath}");
+
         var lines = System.IO.File.ReadAllLines(envFilePath);
         foreach (var line in lines)
         {

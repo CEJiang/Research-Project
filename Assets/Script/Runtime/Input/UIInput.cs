@@ -9,7 +9,7 @@ public class UIInput : PlayerControls.IUIActions
     public InputButton Escape = new();
     public InputButton Inventory = new();
     public readonly InputButton PlayerReasoning = new();
-    public readonly InputButton RelationGraphDelete = new();
+    public readonly InputButton ReasoningGraphDelete = new();
     public readonly InputButton Camera = new();
 
     public UIInput()
@@ -24,7 +24,7 @@ public class UIInput : PlayerControls.IUIActions
         Escape.ResetFrameFlags();
         Inventory.ResetFrameFlags();
         PlayerReasoning.ResetFrameFlags();
-        RelationGraphDelete.ResetFrameFlags();
+        ReasoningGraphDelete.ResetFrameFlags();
         Camera.ResetFrameFlags();
     }
 
@@ -51,11 +51,11 @@ public class UIInput : PlayerControls.IUIActions
         if (isPressed) PlayerReasoning.Press(); else PlayerReasoning.Release();
     }
 
-    public void OnRelationGraph(InputAction.CallbackContext context)
+    public void OnReasoningGraphDelete(InputAction.CallbackContext context)
     {
         bool isPressed = context.ReadValueAsButton();
 
-        if (isPressed) RelationGraphDelete.Press(); else RelationGraphDelete.Release();
+        if (isPressed) ReasoningGraphDelete.Press(); else ReasoningGraphDelete.Release();
     }
 
     public void OnCamera(InputAction.CallbackContext context)
@@ -64,7 +64,6 @@ public class UIInput : PlayerControls.IUIActions
         
         if (isPressed) Camera.Press(); else Camera.Release();
     }
-
-
+    
     #endregion
 }

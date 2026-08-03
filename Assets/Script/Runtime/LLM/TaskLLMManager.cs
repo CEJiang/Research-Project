@@ -25,14 +25,12 @@ public class TaskLLMManager : BaseTaskLLMManager<TaskLLMManager>
     }
 
     public override async Task<string> RunTask(
-        string systemPrompt,
         string userInput,
         JsonSchemaFormat format = default
     )
     {
         var messages = new List<Message>
         {
-            new(MessageRole.System, systemPrompt),
             new(MessageRole.User, userInput)
         };
 

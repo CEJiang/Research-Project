@@ -17,17 +17,21 @@ public class InfoUI : MonoBehaviour
 
     private void OnEnable()
     {
-        if (LocalizationManager.HasInstance)
+        var localizationManager = LocalizationManager.Instance;
+
+        if (localizationManager != null)
         {
-            LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
+            localizationManager.OnLanguageChanged += HandleLanguageChanged;
         }
     }
 
     private void OnDisable()
     {
-        if (LocalizationManager.HasInstance)
+        var localizationManager = LocalizationManager.Instance;
+
+        if (localizationManager != null)
         {
-            LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
+            localizationManager.OnLanguageChanged -= HandleLanguageChanged;
         }
     }
 

@@ -192,7 +192,8 @@ public class FirstPersonController : MonoBehaviour
                     }
 
                     string imagePath = SnapshotEvidenceUtility.SnapshotEvidence();
-                    EvidenceManager.Instance.SelectEvidenceFacts(semanticActionObject, imagePath);
+                    ObjectPreviewManager.Instance.OpenPreview(semanticActionObject);
+                    EvidenceManager.Instance.SelectEvidenceObservations(semanticActionObject, imagePath);
                 }
             }
         }
@@ -236,16 +237,16 @@ public class FirstPersonController : MonoBehaviour
             currentMode = UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.Camera ? Mode.Photograph : Mode.Exploration;
         }
 
-        if (GameInput.UIInput.RelationGraphDelete.WasPressedThisFrame)
+        if (GameInput.UIInput.ReasoningGraphDelete.WasPressedThisFrame)
         {
-            if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.PlayerReasoning && RelationGraphManager.Instance.currentSelectedEdge != null)
+            if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.PlayerReasoning && ReasoningGraphManager.Instance.currentSelectedEdge != null)
             {
-                RelationGraphManager.Instance.DeleteSelectedEdge();
+                ReasoningGraphManager.Instance.DeleteSelectedEdge();
             }
 
-            if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.PlayerReasoning && RelationGraphManager.Instance.currentSelectedNode != null)
+            if (UIManager.Instance.GetCurrentOpenUI() == UIManager.OpenUIType.PlayerReasoning && ReasoningGraphManager.Instance.currentSelectedNode != null)
             {
-                RelationGraphManager.Instance.DeleteSelectedNode();
+                ReasoningGraphManager.Instance.DeleteSelectedNode();
             }
         }
     }

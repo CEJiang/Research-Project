@@ -18,8 +18,8 @@ public class UIManager : Singleton<UIManager>
     [Header("Player Reasoning UI References")]
     public PlayerReasoningUI playerReasoningUI;
 
-    [Header("Fact Selection UI References")]
-    public FactSelectionUI factSelectionUI;
+    [Header("Observation Selection UI References")]
+    public ObservationSelectionUI observationSelectionUI;
     
     public enum OpenUIType
     {
@@ -27,7 +27,7 @@ public class UIManager : Singleton<UIManager>
         PlayerReasoning,
         Inventory,
         Camera,
-        FactSelection
+        ObservationSelection
     }
     public List<OpenUIType> uiStack = new();
     public Dictionary<OpenUIType, GameObject> uiDictionary = new();
@@ -48,9 +48,9 @@ public class UIManager : Singleton<UIManager>
         playerReasoningUI.gameObject.SetActive(false);
         uiDictionary[OpenUIType.PlayerReasoning] = playerReasoningUI.gameObject;
         
-        factSelectionUI = FindObjectOfType<FactSelectionUI>();
-        factSelectionUI.gameObject.SetActive(false);
-        uiDictionary[OpenUIType.FactSelection] = factSelectionUI.gameObject;
+        observationSelectionUI = FindObjectOfType<ObservationSelectionUI>();
+        observationSelectionUI.gameObject.SetActive(false);
+        uiDictionary[OpenUIType.ObservationSelection] = observationSelectionUI.gameObject;
     }
 
     public void TogglePlayerReasoningUI()
@@ -105,16 +105,15 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
-    public void ToggleFactSelectionUI()
+    public void ToggleObservationSelectionUI()
     {
-        factSelectionUI.gameObject.SetActive(!factSelectionUI.gameObject.activeSelf);
-        CursorManager.Instance.SetCursorState(factSelectionUI.gameObject.activeSelf);
+        observationSelectionUI.gameObject.SetActive(!observationSelectionUI.gameObject.activeSelf);
+        CursorManager.Instance.SetCursorState(observationSelectionUI.gameObject.activeSelf);
 
-        if (factSelectionUI.gameObject.activeSelf)
+        if (observationSelectionUI.gameObject.activeSelf)
         {
-            // guideUI.ShowFactSelectionInputGuide();
-            FactSelectionManager.Instance.SetFactSelectionMode(FactSelectionManager.FactSelectionMode.Normal);
-            uiStack.Add(OpenUIType.FactSelection);
+            ObservationSelectionManager.Instance.SetObservationSelectionMode(ObservationSelectionManager.ObservationSelectionMode.Normal);
+            uiStack.Add(OpenUIType.ObservationSelection);
 
             // Enter fact selection mode, we should close camera UI
             // Teporarily close camera UI when entering fact selection mode
@@ -123,7 +122,7 @@ public class UIManager : Singleton<UIManager>
         }
         else
         {
-            FactSelectionManager.Instance.SetFactSelectionMode(FactSelectionManager.FactSelectionMode.None);
+            ObservationSelectionManager.Instance.SetObservationSelectionMode(ObservationSelectionManager.ObservationSelectionMode.None);
             UpdateUIStackAfterClosingUI();
 
             // Exit fact selection mode, we should return to previous camera UI
@@ -133,9 +132,9 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
-    public void ChangeFactSelectionFade(bool faded)
+    public void ChangeObservationSelectionFade(bool faded)
     {
-        factSelectionUI.SetFactUIFade(faded);
+        observationSelectionUI.SetObservationUIFade(faded);
         CursorManager.Instance.SetCursorState(!faded);
     }
 
